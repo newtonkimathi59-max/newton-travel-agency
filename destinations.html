@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Destinations | Newton Travel Agency</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: #f8f9fb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0a3d62, #1a5276);
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+    }
+
+    header h1 {
+      margin: 10px 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd57;
+    }
+
+    .hero {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d3/Serengeti_National_Park_Landscape.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .hero h2 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.5rem;
+      width: 90%;
+      max-width: 700px;
+      line-height: 1.4;
+    }
+
+    .content {
+      padding: 60px 10%;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      color: #0a3d62;
+      margin: 15px;
+    }
+
+    .card p {
+      margin: 0 15px 20px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .card .extra-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-top: -5px;
+    }
+
+    footer {
+      background: #0a3d62;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Newton Travel Agency</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinations.html" class="active">Destinations</a>
+      <a href="packages.html">Packages</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="payment.html">Payment</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Discover East Africa’s Breathtaking Beauty – From the wild plains to tropical islands and vibrant cultures.</h2>
+  </section>
+
+  <section class="content">
+    <div class="intro">
+      <p>Welcome to East Africa – a region where adventure meets serenity. At Newton Travel Agency, we take you beyond ordinary travel to experience the wonders of Kenya, Tanzania, and Burundi. Each destination offers its own story, its own heartbeat, and its own unforgettable moments waiting to be lived.</p>
+    </div>
+
+    <div class="destinations">
+
+      <!-- Kenya -->
+    <div class="destinations">
+  <div class="card">
+    <img src="images/refer.jpg" alt="Kenya Safari">
+    <h3>🇰🇪 Kenya – The Heart of Safari</h3>
+    <p>Experience the Maasai Mara, the Great Migration, and the stunning beaches of Mombasa.</p>
+  </div>
+
+  <div class="card">
+    <img src="images/tanzania.jpg" alt="Tanzania">
+    <h3>🇹🇿 Tanzania – The Land of Giants</h3>
+    <p>Climb Kilimanjaro, explore Serengeti safaris, and relax on Zanzibar’s turquoise shores.</p>
+  </div>
+
+  <div class="card">
+    <img src="images/burundi.jpg" alt="Burundi">
+    <h3>🇧🇮 Burundi – The Hidden Gem</h3>
+    <p>Discover Lake Tanganyika, lush green hills, and a rich cultural heritage in the heart of Africa.</p>
+  </div>
+</div>
+  </section>
+
+  <footer>
+    <p>© 2025 Newton Travel Agency | Explore the Spirit of East Africa</p>
+  </footer>
+</body>
+</html>
