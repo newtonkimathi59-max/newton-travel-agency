@@ -1,51 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Packages | Newton Travel Agency</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Packages | Newton Travel Agency</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      text-align: center;
+      color: white;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .intro h2 {
+      color: #00796b;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      color: #555;
+      font-size: 1.05rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .package {
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .package:hover {
+      transform: scale(1.03);
+    }
+
+    .package img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .package-content {
+      padding: 20px;
+    }
+
+    .package-content h3 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    .package-content p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #ff5722;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      background: #00796b;
+      color: white;
+      padding: 30px 15px;
+      margin-top: 80px;
+    }
+
+    footer a {
+      color: #c8f7f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Our Travel Packages</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="destinations.html">Destinations</a>
-      <a href="packages.html">Packages</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About us</a>
+    <a href="destination.html">Destinations</a>
+    <a href="packages.html">Packages</a>
+    <a href="payment.html">Payment</a>
+    <a href="login.html">Login</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <section class="content">
-    <div class="destinations">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1549887534-3db1bd59dcca">
-        <h3>Safari Explorer</h3>
-        <p>7 days in Kenya and Tanzania — Maasai Mara & Serengeti experience.</p>
-        <p><strong>$1,200 per person</strong></p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1526401485004-2aa6c3a09a3e">
-        <h3>Beach Getaway</h3>
-        <p>5 days in Zanzibar and Mombasa — pure relaxation.</p>
-        <p><strong>$850 per person</strong></p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d">
-        <h3>Culture & Heritage Tour</h3>
-        <p>10 days across Burundi and Tanzania — culture, dance, and discovery.</p>
-        <p><strong>$1,500 per person</strong></p>
-      </div>
+  <div class="container">
+    <div class="intro">
+      <h2>Choose Your Perfect Journey</h2>
+      <p>At Newton Travel Agency, we offer handpicked travel packages that cater to adventure seekers, honeymooners, families, and luxury travelers alike. Each package includes accommodation, guided tours, meals, transport, and 24/7 support to ensure a smooth, unforgettable trip.</p>
     </div>
-  </section>
+
+    <div class="packages">
+      
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80" alt="Kenya Safari">
+        <div class="package-content">
+          <h3>Kenya Safari Adventure</h3>
+          <p>Experience the Maasai Mara, Amboseli, and Tsavo in a 7-day guided safari. Witness the Big Five and breathtaking sunsets.</p>
+          <p class="price">From $1,800 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Maldives">
+        <div class="package-content">
+          <h3>Maldives Luxury Escape</h3>
+          <p>Indulge in private villas, crystal-clear waters, and sunset cruises — perfect for honeymooners and couples.</p>
+          <p class="price">From $2,500 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Paris">
+        <div class="package-content">
+          <h3>Romantic Paris Getaway</h3>
+          <p>Discover the City of Love — Eiffel Tower, Seine River, and fine dining in 5-star accommodations.</p>
+          <p class="price">From $1,950 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1534996858223-69324b60657d?auto=format&fit=crop&w=800&q=80" alt="Tanzania Safari">
+        <div class="package-content">
+          <h3>Serengeti & Zanzibar Combo</h3>
+          <p>Go from the wild plains of Serengeti to the white-sand beaches of Zanzibar in one epic adventure.</p>
+          <p class="price">From $2,200 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Dubai">
+        <div class="package-content">
+          <h3>Dubai Luxury Experience</h3>
+          <p>Desert safaris, skyscraper views, and world-class shopping — explore Dubai in style and comfort.</p>
+          <p class="price">From $1,600 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=800&q=80" alt="Cultural Tour">
+        <div class="package-content">
+          <h3>Cultural Tour of Egypt</h3>
+          <p>Step into history with visits to the Pyramids, Nile River cruise, and Luxor temples with expert guides.</p>
+          <p class="price">From $1,700 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="New York">
+        <div class="package-content">
+          <h3>New York City Explorer</h3>
+          <p>See the Statue of Liberty, Times Square, and Broadway — experience the city that never sleeps.</p>
+          <p class="price">From $1,500 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Thailand">
+        <div class="package-content">
+          <h3>Thailand Islands Adventure</h3>
+          <p>Explore Phuket, Phi Phi, and Krabi with snorkeling, night markets, and local Thai cuisine experiences.</p>
+          <p class="price">From $1,850 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80" alt="Cape Town">
+        <div class="package-content">
+          <h3>Cape Town & Garden Route</h3>
+          <p>Discover Table Mountain, wine estates, and the iconic Cape Point with scenic coastal drives.</p>
+          <p class="price">From $2,000 per person</p>
+        </div>
+      </div>
+
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1511733897359-7475c04b7456?auto=format&fit=crop&w=800&q=80" alt="Tokyo">
+        <div class="package-content">
+          <h3>Tokyo & Kyoto Discovery</h3>
+          <p>Immerse in Japan’s modern and traditional culture — sushi workshops, temples, and neon lights.</p>
+          <p class="price">From $2,400 per person</p>
+        </div>
+      </div>
+
+      <!-- You can keep adding more packages here -->
+      
+    </div>
+  </div>
 
   <footer>
-    <p>© 2025 Newton Travel Agency | All Rights Reserved</p>
+    <p>© 1999–<script>document.write(new Date().getFullYear());</script> Newton Travel Agency. All Rights Reserved.</p>
+    <p>
+      Follow us:
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
   </footer>
+
 </body>
 </html>

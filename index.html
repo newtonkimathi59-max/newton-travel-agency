@@ -2,51 +2,309 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Newton Travel Agency | Explore East Africa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newton Travel Agency | Explore the World</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    header h1, header p, header a {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    header a {
+      background-color: #00b894;
+      padding: 12px 25px;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+
+    header a:hover {
+      background-color: #019874;
+    }
+
+    nav {
+      background-color: #00796b;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 70px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00796b;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 900px;
+      margin: 0 auto 30px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .packages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .package {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 350px;
+      transition: transform 0.3s ease;
+    }
+
+    .package:hover {
+      transform: scale(1.05);
+    }
+
+    .package img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .package-content {
+      padding: 20px;
+    }
+
+    .package-content h3 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    .package-content p {
+      color: #555;
+      text-align: left;
+    }
+
+    .payment {
+      background: #e0f2f1;
+      padding: 50px 20px;
+      border-radius: 15px;
+    }
+
+    .payment img {
+      width: 80px;
+      height: auto;
+      margin: 10px;
+    }
+
+    .login {
+      background: #fff;
+      padding: 50px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .login input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .login button {
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login button:hover {
+      background: #005f54;
+    }
+
+    footer {
+      background: #00796b;
+      color: white;
+      text-align: center;
+      padding: 40px 10px;
+      margin-top: 80px;
+    }
+
+    footer a {
+      color: #c8f7f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About us</a>
+    <a href="destination.html">Destinations</a>
+    <a href="packages.html">Packages</a>
+    <a href="payment.html">Payment</a>
+    <a href="login.html">Login</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <header>
-    <h1>Newton’s World Travel Agency</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="destinations.html">Destinations</a>
-      <a href="packages.html">Packages</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-      <a href="payment.html">Payment</a>
-    </nav>
+    <h1>Newton Travel Agency</h1>
+    <p>Discover. Explore. Experience the World with Us Since 1999</p>
+    <a href="packages.html">Book Your Next Adventure</a>
   </header>
 
-  <section class="hero" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090');">
-    <h2>Adventure Awaits in East Africa</h2>
-    <p>Safari across the wild, relax on the coast, and explore the soul of Africa.</p>
-    <a href="destinations.html" class="btn">Discover Now</a>
-  </section>
+  <div class="container">
 
-  <section class="content">
-    <h2>Welcome to Newton Travel Agency</h2>
-    <p>We bring you the best of East Africa — from Kenya’s majestic wildlife to the peaks of Tanzania and the charm of Burundi. Let us design your dream adventure.</p>
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="East Africa Landscape" />
-     </section>
-      
-<footer>
-  <p>© 2025 Newton Travel Agency | All Rights Reserved</p>
-  
-  <div class="social-share" style="margin-top: 10px;">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://newtontravelagency.com" target="_blank" rel="noopener noreferrer" style="margin-right: 10px;">
-      Share on Facebook
-    </a>
-    <a href="https://twitter.com/intent/tweet?url=https://newtontravelagency.com&text=Check%20out%20this%20amazing%20travel%20agency!" target="_blank" rel="noopener noreferrer" style="margin-right: 10px;">
-      Share on Twitter
-    </a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://newtontravelagency.com" target="_blank" rel="noopener noreferrer">
-      Share on LinkedIn
-    </a>
+    <section class="about">
+      <h2>About Newton Travel Agency</h2>
+      <p>Founded in 1999, Newton Travel Agency has been a leader in providing unforgettable travel experiences. From African safaris to international city escapes, we specialize in connecting travelers with the world’s most inspiring destinations — responsibly, luxuriously, and authentically.</p>
+      <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Travelers exploring">
+    </section>
+
+    <section class="wildlife">
+      <h2>Wildlife Wonders</h2>
+      <p>Meet the beauty of Africa’s wild — lions, elephants, giraffes, zebras, and flamingos in their natural habitat.</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1552083375-1447ce886485?auto=format&fit=crop&w=800&q=80" alt="Lion">
+        <img src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?auto=format&fit=crop&w=800&q=80" alt="Elephant">
+        <img src="https://images.unsplash.com/photo-1577985759186-3bedeffb3f80?auto=format&fit=crop&w=800&q=80" alt="Giraffe">
+        <img src="https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?auto=format&fit=crop&w=800&q=80" alt="Zebra">
+      </div>
+    </section>
+
+    <section id="payment" class="payment">
+      <h2>Payment Options</h2>
+      <p>We make your booking secure and convenient. Choose from a variety of trusted payment methods below:</p>
+      <div style="text-align:center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mastercard-logo.png" alt="MasterCard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/M-PESA_LOGO-01.svg" alt="Mpesa">
+      </div>
+      <p>We accept online transfers, debit/credit cards, PayPal, and Mpesa payments. Once payment is confirmed, your travel package will be reserved and your itinerary sent to your email instantly.</p>
+    </section>
+
+    <section id="login">
+      <h2>Member Login</h2>
+      <div class="login">
+        <form>
+          <input type="email" placeholder="Enter your email" required><br>
+          <input type="password" placeholder="Enter your password" required><br>
+          <button type="submit">Login</button>
+          <p>Don’t have an account? <a href="#">Sign Up</a></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>📍 Nairobi, Kenya | 📞 +254 745456411 | ✉️ info@newtontravel.com</p>
+      <p>Follow us on: 
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">YouTube</a>
+      </p>
+    </section>
+
   </div>
-</footer>
+
+  <footer>
+    <p>© 1999–<script>document.write(new Date().getFullYear());</script> Newton Travel Agency. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
