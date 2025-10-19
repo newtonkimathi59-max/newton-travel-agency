@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations | Newton Travel Agency</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url("https://images.unsplash.com/photo-1593979915180-4dcef7066ed5?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+    header h1 { font-size: 3.2rem; margin-bottom: 10px; }
+    header p { font-size: 1.3rem; }
+    .container {
+      max-width: 1400px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .intro h2 {
+      font-size: 2.2rem;
+      color: #006d5b;
+    }
+    .intro p {
+      margin-top: 12px;
+      color: #444;
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 22px;
+    }
+    .card-content h3 {
+      color: #006d5b;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+    .card-content p {
+      color: #555;
+      font-size: 0.97rem;
+      margin-bottom: 0;
+    }
+    footer {
+      background-color: #006d5b;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: 80px;
+    }
+    footer a {
+      color: #c8f7f0;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Explore the World with Newton Travel Agency</h1>
+    <p>20 breathtaking destinations, one unforgettable journey — since 1999</p>
+  </header>
+
+  <div class="container">
+    <section class="intro">
+      <h2>Our Global Destinations</h2>
+      <p>From the wild plains of Africa and tranquil islands of the Indian Ocean, to vibrant cities in Europe and Asia’s cultural hubs — at Newton Travel Agency, we’ve carefully selected 20 of the world’s most inspiring destinations. Let your next great adventure begin here.</p>
+    </section>
+
+    <section class="destinations">
+      <!-- Example card -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1543248939-9ec6bcfca43c?auto=format&fit=crop&w=800&q=80" alt="Maasai Mara, Kenya">
+        <div class="card-content">
+          <h3>Maasai Mara, Kenya</h3>
+          <p>Roam the golden savannahs of the Maasai Mara, witness the Great Migration in action and meet Maasai warriors who guide you through authentic wildlife encounters.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526779259212-939e64792b16?auto=format&fit=crop&w=800&q=80" alt="Cape Town, South Africa">
+        <div class="card-content">
+          <h3>Cape Town, South Africa</h3>
+          <p>Where ocean meets mountain — from Table Mountain hikes and colourful Bo-Kaap streets, to wine estates and penguins at Boulders Beach.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" alt="Paris, France">
+        <div class="card-content">
+          <h3>Paris, France</h3>
+          <p>The City of Light — stroll along the Seine, marvel at the Eiffel Tower and dive into world-class cafés, museums and boutiques.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1533681703669-94a78db1b50d?auto=format&fit=crop&w=800&q=80" alt="Marrakech, Morocco">
+        <div class="card-content">
+          <h3>Marrakech, Morocco</h3>
+          <p>A sensory journey of spice and colour — wander through the Medina’s souks, relax in a riad and discover the Sahara on a desert excursion.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80" alt="London, UK">
+        <div class="card-content">
+          <h3>London, UK</h3>
+          <p>From royal palaces to vibrant street art — London melds historic grandeur with modern flair and world-class cuisine.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80" alt="Tokyo, Japan">
+        <div class="card-content">
+          <h3>Tokyo, Japan</h3>
+          <p>A neon wonderland of tradition and innovation — explore ancient temples by day and modern skyscrapers by night.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Dubai, UAE">
+        <div class="card-content">
+          <h3>Dubai, UAE</h3>
+          <p>Luxury and desert adventure wrapped into one — world-class architecture, shopping, dune safaris and star-studded sights.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="New York City, USA">
+        <div class="card-content">
+          <h3>New York City, USA</h3>
+          <p>The city that never sleeps — Broadway shows, skyline views, iconic landmarks and multicultural neighbourhoods await.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526481280691-906b2a8e70a1?auto=format&fit=crop&w=800&q=80" alt="Rio de Janeiro, Brazil">
+        <div class="card-content">
+          <h3>Rio de Janeiro, Brazil</h3>
+          <p>Fun, sun and carnival spirit — soak in panoramic views from Christ the Redeemer and dance along the famous beaches of Copacabana and Ipanema.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Sydney, Australia">
+        <div class="card-content">
+          <h3>Sydney, Australia</h3>
+          <p>Opera House, harbour cruises, Bondi Beach and coastal walks — this sun-lit city combines relaxed Aussie style with global energy.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1593979915180-4dcef7066ed5?auto=format&fit=crop&w=800&q=80" alt="Bali, Indonesia">
+        <div class="card-content">
+          <h3>Bali, Indonesia</h3>
+          <p>Lush rice terraces, sacred temples and beachy rituals — Bali is island life at its most vibrant and soulful.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1593979915180-4dcef7066ed5?auto=format&fit=crop&w=800&q=80" alt="Maldives">
+        <div class="card-content">
+          <h3>Maldives</h3>
+          <p>Crystal-clear lagoons, over-water villas and palm-lined atolls — your haven of peace and luxury in the Indian Ocean.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526779259212-939e64792b16?auto=format&fit=crop&w=800&q=80" alt="Santorini, Greece">
+        <div class="card-content">
+          <h3>Santorini, Greece</h3>
+          <p>White-washed houses, cobalt domes and caldera views — a romantic cliff-side escape like no other.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" alt="Istanbul, Turkey">
+        <div class="card-content">
+          <h3>Istanbul, Turkey</h3>
+          <p>A city straddling continents — historic mosques, vibrant bazaars, Bosphorus ferries and deep-rooted culture in one place.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1533681703669-94a78db1b50d?auto=format&fit=crop&w=800&q=80" alt="Cairo, Egypt">
+        <div class="card-content">
+          <h3>Cairo, Egypt</h3>
+          <p>Walk among ancient wonders — the Pyramids, the Sphinx and the Nile’s timeless embrace await your discovery.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80" alt="Tokyo, Japan (another view)">
+        <div class="card-content">
+          <h3>Kyoto, Japan</h3>
+          <p>Zen gardens, historic temples and traditional tea houses — Kyoto offers a tranquil counterpoint to modern Tokyo.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Victoria Falls, Zambia/Zimbabwe">
+        <div class="card-content">
+          <h3>Victoria Falls, Zambia/Zimbabwe</h3>
+          <p>“The Smoke That Thunders” — one of the world’s largest waterfalls, surrounded by lush rainforest and thrilling adventure.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526481280691-906b2a8e70a1?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu, Peru">
+        <div class="card-content">
+          <h3>Machu Picchu, Peru</h3>
+          <p>High in the Andes, this ancient Incan city shrouded in mist invites discovery, history and breathtaking views.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Grand Canyon, USA">
+        <div class="card-content">
+          <h3>Grand Canyon, USA</h3>
+          <p>A natural masterpiece carved by time — hues of rock and expansive vistas create an unforgettable journey into the earth’s story.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1593979915180-4dcef7066ed5?auto=format&fit=crop&w=800&q=80" alt="Great Barrier Reef, Australia">
+        <div class="card-content">
+          <h3>Great Barrier Reef, Australia</h3>
+          <p>Dive into the world’s largest coral reef system — vibrant marine life, coral gardens and underwater adventure await.</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <footer>
+    <p>© 1999–<script>document.write(new Date().getFullYear());</script> Newton Travel Agency. All rights reserved.</p>
+    <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+  </footer>
+
+</body>
+</html>
