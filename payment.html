@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newton Travel Payment</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    /* Basic styling */
+    #card-element {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    #payment-message {
+      color: green;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Make a Payment</h2>
+  <form id="payment-form">
+    <div id="card-element"></div>
+    <button type="submit">Pay $50</button>
+  </form>
+  <div id="payment-message"></div>
+
+  <script>
+    const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY'); // Replace with your Stripe Publishable Key
+    const elements = stripe.elements();
+    const card = elements.create('card');
+    card.mount('#card-element');
+
+    const form = document.getElementById('payment-form');
+    const paymentMessage = document.getElementById('payment-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Call your backend to create a PaymentIntent
+      const response = await fetch('/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: 5000 }) // amount in cents ($50)
+      });
+      const { clientSecret } = await response.json();
+
+      const result = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+        }
+      });
+
+      if (result.error) {
+        paymentMessage.textContent = result.error.message;
+        paymentMessage.style.color = 'red';
+      } else if (result.paymentIntent.status === 'succeeded') {
+        paymentMessage.textContent = 'Payment successful! Thank you.';
+        paymentMessage.style.color = 'green';
+      }
+    });
+  </script>
+</body>
+</html>
