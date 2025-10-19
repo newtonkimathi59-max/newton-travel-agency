@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Newton Travel Agency</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      position: relative;
+      z-index: 2;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .about-text {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      color: #006d5b;
+    }
+
+    .about-text p {
+      margin-top: 20px;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .section h3 {
+      color: #006d5b;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #006d5b;
+      color: white;
+      padding: 30px 10px;
+      margin-top: 80px;
+    }
+
+    footer a {
+      color: #c8f7f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About Newton Travel Agency</h1>
+    <p>Connecting You to the Heart of East Africa Since 1999</p>
+  </header>
+
+  <div class="container">
+    <section class="about-text">
+      <h2>Our Story</h2>
+      <p>
+        Founded in 1999, <strong>Newton Travel Agency</strong> was born from a dream to open the world to the hidden wonders of East Africa. 
+        What began as a small family-owned tour company in Nairobi has grown into a full-service travel agency that connects travelers to Kenya, Tanzania, Burundi, Uganda, and beyond.
+        For over two decades, we’ve guided adventurers through breathtaking savannahs, serene coastlines, and vibrant cities — curating experiences that reveal the soul of Africa.
+      </p>
+      <p>
+        Our philosophy is simple: travel should not just be about seeing places, but about feeling them. 
+        We believe in creating sustainable tourism that benefits both the traveler and the local communities. 
+        Our partnerships with local guides, conservation projects, and cultural organizations ensure that every trip leaves a positive footprint.
+      </p>
+    </section>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=800&q=80" alt="Happy travelers">
+      <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80" alt="Office building">
+      <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=800&q=80" alt="African landscape">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Luxury hotel">
+      <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Travel group">
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="City view">
+    </div>
+
+    <section class="section">
+      <h3>Our Mission</h3>
+      <p>
+        To make travel an inspiring, life-changing experience for every explorer. 
+        We specialize in custom safaris, city tours, beach holidays, and cultural immersions designed to reflect your personality and passion for discovery.
+      </p>
+
+      <h3>Our Vision</h3>
+      <p>
+        To be East Africa’s most trusted and innovative travel company, blending adventure with sustainability.
+        We aim to preserve natural heritage, celebrate local culture, and create connections that last long after the journey ends.
+      </p>
+
+      <h3>Why Choose Us</h3>
+      <p>
+        Newton Travel Agency combines over 25 years of expertise with heartfelt service. 
+        Our experienced team of travel designers, guides, and coordinators ensures every detail — from airport pickup to your last sunset — is perfectly handled.
+        We provide tailored itineraries, multilingual guides, 24/7 customer support, and insider access to the region’s most exclusive spots.
+      </p>
+    </section>
+
+    <section class="section">
+      <h3>Meet Our Team</h3>
+      <p>
+        Our dedicated team includes local experts, adventure lovers, and passionate storytellers who live and breathe travel. 
+        Together, we ensure every journey is not just memorable but transformative. 
+        Whether you’re seeking a safari through the Maasai Mara, a cultural visit in Stone Town, or a peaceful retreat on Lake Tanganyika, 
+        we’re here to make it happen with warmth, professionalism, and authenticity.
+      </p>
+
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="Team member 1">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Team member 2">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Team member 3">
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 1999–<script>document.write(new Date().getFullYear());</script> Newton Travel Agency. All rights reserved.</p>
+    <p>
+      Follow us:
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
+  </footer>
+
+</body>
+</html>
