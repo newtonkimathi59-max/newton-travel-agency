@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now | Newton Travel Agency</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7f8;
+      color: #333;
+    }
+
+    nav {
+      background-color: #00796b;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 40px 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00796b;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005f54;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #00796b;
+      color: white;
+      padding: 30px 10px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #c8f7f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About us</a>
+    <a href="destination.html">Destinations</a>
+    <a href="packages.html">Packages</a>
+    <a href="book.html">Book Now</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Book Your Adventure</h1>
+    <p>Reserve your dream travel experience with Newton Travel Agency</p>
+  </header>
+
+  <div class="container">
+    <h2>Booking Form</h2>
+    <form action="#" method="post">
+      
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+      
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="+254 7XXXXXXXX" required>
+      
+      <label for="destination">Destination</label>
+      <select id="destination" name="destination" required>
+        <option value="">Select Destination</option>
+        <option value="kenya">Kenya</option>
+        <option value="tanzania">Tanzania</option>
+        <option value="burundi">Burundi</option>
+        <option value="uganda">Uganda</option>
+        <option value="rwanda">Rwanda</option>
+        <option value="egypt">Egypt</option>
+        <option value="south africa">South Africa</option>
+        <option value="mauritius">Mauritius</option>
+        <option value="zanzibar">Zanzibar</option>
+        <option value="morocco">Morocco</option>
+      </select>
+
+      <label for="travelDates">Travel Dates</label>
+      <input type="text" id="travelDates" name="travelDates" placeholder="e.g., 01/12/2025 - 10/12/2025" required>
+
+      <label for="travelers">Number of Travelers</label>
+      <input type="number" id="travelers" name="travelers" placeholder="Enter number of travelers" required>
+
+      <label for="package">Travel Package</label>
+      <select id="package" name="package" required>
+        <option value="">Select Package</option>
+        <option value="safari">Safari Adventure</option>
+        <option value="beach">Beach Holiday</option>
+        <option value="citytour">City Tour</option>
+        <option value="cultural">Cultural Immersion</option>
+        <option value="luxury">Luxury Retreat</option>
+      </select>
+
+      <label for="notes">Additional Notes / Requests</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Any special requests or notes"></textarea>
+
+      <label for="paymentMethod">Preferred Payment Method</label>
+      <select id="paymentMethod" name="paymentMethod" required>
+        <option value="">Select Payment Method</option>
+        <option value="mpesa">Mpesa</option>
+        <option value="credit-card">Credit / Debit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 1999–<script>document.write(new Date().getFullYear());</script> Newton Travel Agency. All rights reserved.</p>
+    <p>
+      Follow us:
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">YouTube</a> |
+      <a href="#">TikTok</a>
+    </p>
+  </footer>
+
+</body>
+</html>
