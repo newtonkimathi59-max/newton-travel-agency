@@ -1,0 +1,265 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #f4f4f4;
+}
+header {
+  background-color: #0077b6;
+  color: white;
+  padding: 20px 0;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: #90e0ef;
+}
+.hero {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+}
+.btn {
+  background: #03045e;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.content {
+  padding: 40px 20px;
+  background: white;
+}
+.destinations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.card {
+  background: #fff;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+footer {
+  background: #03045e;
+  color: white;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+form input, form textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.login-form {
+  background: white;
+  display: inline-block;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+section.content img {
+  max-width: 40%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+div.card p {
+  padding: 0 15px 15px 15px;
+  color: #555;
+} 
+h2 {
+  color: #03045e;
+}
+h3 {
+  color: #0077b6;
+}
+a.btn:hover {
+  background: #023e8a;
+}
+form button {
+  background: #0077b6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+form button:hover {
+  background: #005f87;
+}
+section.content h2 {
+  margin-bottom: 20px;
+}
+section.content p {
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+nav {
+  margin-top: 10px;
+}
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.card h3 {
+  margin: 15px 0;
+}
+.card p {
+  font-size: 1rem;
+}
+.card img {
+  transition: transform 0.3s;
+}
+.card img:hover {
+  transform: scale(1.05);
+}
+.card {
+  transition: box-shadow 0.3s;
+}
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+form {
+  margin-top: 20px;
+}
+form input, form textarea {
+  margin-bottom: 15px;
+}
+form input:focus, form textarea:focus {
+  border-color: #0077b6;
+  outline: none;
+}
+form button {
+  margin-top: 10px;
+}
+footer p {
+  margin: 0;
+}
+.hero {
+  background-image: url('hero-image.jpg');
+}
+footer {
+  margin-top: 40px;
+}
+section.content {
+  margin-bottom: 40px;
+}
+.login-form {
+  background: white;
+  display: inline-block;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+form input, form textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+    /* Add some specific payment form styles */
+    .payment-container {
+      max-width: 500px;
+      background: white;
+      margin: 80px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .payment-container h2 {
+      text-align: center;
+      color: #1a4d8f;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    form button {
+      background: #1a4d8f;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #14396b;
+    }
+
+    .success {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      display: none;
+      margin-top: 15px;
+    }
+    img .payment-image {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .payment-container img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    
+    
