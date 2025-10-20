@@ -1,25 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Newton Travel Agency | Explore the World</title>
-  <meta property="og:title" content="Newton Travel Agency | Explore the World">
-<meta property="og:description" content="Discover, explore, and book your dream destinations with Newton Travel Agency — your travel companion since 1999.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
-<meta property="og:url" content="https://newtontravelagency.netlify.app">
-<meta name="twitter:card" content="summary_large_image">
+
   <style>
-    body {
+    /* 🌍 Global Styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
       background-color: #f8f9fa;
       color: #333;
+      overflow-x: hidden;
     }
 
+    /* 🌐 Navbar */
+    nav {
+      background-color: #00796b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav h2 {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #c8f7f0;
+    }
+
+    /* ☰ Hamburger icon */
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      height: 3px;
+      width: 25px;
+      background: #fff;
+      margin: 4px 0;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    /* 📱 Responsive Navbar */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #00695c;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: flex;
+      }
+
+      nav h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* 🌅 Hero Section */
     header {
-      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      height: 90vh;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -27,6 +108,7 @@
       align-items: center;
       text-align: center;
       color: white;
+      padding: 0 20px;
     }
 
     header::after {
@@ -38,19 +120,20 @@
       z-index: 1;
     }
 
-    header h1, header p, header a {
+    header h1, header p, header a, .search-bar {
       position: relative;
       z-index: 2;
     }
 
     header h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
     }
 
     header p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      max-width: 600px;
     }
 
     header a {
@@ -59,57 +142,66 @@
       color: white;
       text-decoration: none;
       border-radius: 30px;
-      transition: background 0.3s ease;
+      transition: 0.3s ease;
     }
 
     header a:hover {
       background-color: #019874;
     }
 
-    nav {
-      background-color: #00796b;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    /* 🔍 Search Bar */
+    .search-bar {
+      margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 15px 10px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    nav a {
+    .search-bar input {
+      padding: 12px;
+      width: 280px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .search-bar input:focus {
+      border-color: #0a74da;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 12px 20px;
+      background-color: #0a74da;
       color: white;
-      text-decoration: none;
-      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .search-bar button:hover {
+      background-color: #065bb5;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      margin-bottom: 70px;
-    }
-
-    h2 {
+    /* 🏝️ Featured Destinations */
+    .destinations {
+      padding: 60px 20px;
       text-align: center;
+    }
+
+    .destinations h2 {
       color: #00796b;
       font-size: 2rem;
       margin-bottom: 20px;
     }
 
-    p {
-      text-align: center;
-      font-size: 1.05rem;
+    .destinations p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
       color: #555;
-      max-width: 900px;
-      margin: 0 auto 30px;
     }
 
     .gallery {
@@ -122,105 +214,22 @@
       width: 100%;
       height: 230px;
       object-fit: cover;
-      border-radius: 15px;
+      border-radius: 12px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
 
     .gallery img:hover {
       transform: scale(1.05);
     }
 
-    .packages {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-    }
-
-    .package {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      width: 350px;
-      transition: transform 0.3s ease;
-    }
-
-    .package:hover {
-      transform: scale(1.05);
-    }
-
-    .package img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .package-content {
-      padding: 20px;
-    }
-
-    .package-content h3 {
-      color: #00796b;
-      margin-bottom: 10px;
-    }
-
-    .package-content p {
-      color: #555;
-      text-align: left;
-    }
-
-    .payment {
-      background: #e0f2f1;
-      padding: 50px 20px;
-      border-radius: 15px;
-    }
-
-    .payment img {
-      width: 80px;
-      height: auto;
-      margin: 10px;
-    }
-
-    .login {
-      background: #fff;
-      padding: 50px 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .login input {
-      width: 90%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    .login button {
-      background: #00796b;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .login button:hover {
-      background: #005f54;
-    }
-
+    /* 🧭 Footer */
     footer {
       background: #00796b;
       color: white;
       text-align: center;
       padding: 40px 10px;
-      margin-top: 80px;
+      margin-top: 60px;
     }
 
     footer a {
@@ -232,133 +241,142 @@
     footer a:hover {
       text-decoration: underline;
     }
-  </style>
+
+    /* 📱 Adjustments for smaller devices */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .search-bar input {
+        width: 220px;
+      }
+    }
+    header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.hero-content h1 {
+  font-size: 3rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 15px 0 25px;
+}
+.hero-content a {
+  background-color: #00b894;
+  padding: 12px 25px;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+.hero-content a:hover {
+  background-color: #019874;
+}
+p {
+  color: #fff;
+  margin: 15px 0 25px;
+  text-align: center;
+  
+}
+</style>
 </head>
 <body>
 
+  <!-- 🌐 NAVBAR -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about us.html">About us</a>
-    <a href="destination.html">Destinations</a>
-    <a href="packages.html">Packages</a>
-    <a href="payment.html">Payment</a>
-    <a href="login.html">Login</a>
-    <a href="contact.html">Contact</a>
-    <a href="book now.html">Book Now</a>
+    <h2>Newton Travel</h2>
+    <div class="menu-icon" id="menu-icon">
+      <span></span><span></span><span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="sign up.html">Sign Up</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="payment.html">Payment</a></li>
+    </ul>
   </nav>
 
-  <header>
-    <h1>Newton Travel Agency</h1>
-    <p>Discover. Explore. Experience the World with Us Since 1999</p>
-    <a href="packages.html">Book Your Next Adventure</a>
-  </header>
-<section id="promo-video" style="text-align:center; padding:60px 20px; background:#f4f4f4;">
-  <h2 style="color:#00796b;">Explore the World with Newton Travel Agency</h2>
-  <p>Watch our travel highlights and start planning your next adventure!</p>
-  <div style="display:flex; justify-content:center; margin-top:30px;">
+  <header id="hero">
+  <video autoplay muted loop playsinline id="heroVideo">
+    <source src="https://videos.pexels.com/video-files/857195/857195-hd_1280_720_25fps.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>Discover the Wild Beauty of Africa</h1>
+    <p>Adventure through nature’s wonders with Newton Travel.</p>
+    <a href="#packages">Start Your Journey</a>
   </div>
-  <iframe width="800" height="450" 
-        src="https://www.youtube.com/embed/LgtU1h0ck58" 
-        title="Travel Agency Promo Video" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-</iframe>
-</section>
-
-  <div class="container">
-
-    <section class="about">
-      <h2>About Newton Travel Agency</h2>
-      <p>Founded in 1999, Newton Travel Agency has been a leader in providing unforgettable travel experiences. From African safaris to international city escapes, we specialize in connecting travelers with the world’s most inspiring destinations — responsibly, luxuriously, and authentically.</p>
-      <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Travelers exploring">
-    </section>
-
-    <section class="wildlife">
-      <h2>Wildlife Wonders</h2>
-      <p>Meet the beauty of Africa’s wild — lions, elephants, giraffes, zebras, and flamingos in their natural habitat.</p>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1552083375-1447ce886485?auto=format&fit=crop&w=800&q=80" alt="Lion">
-        <img src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?auto=format&fit=crop&w=800&q=80" alt="Elephant">
-        <img src="https://images.unsplash.com/photo-1577985759186-3bedeffb3f80?auto=format&fit=crop&w=800&q=80" alt="Giraffe">
-        <img src="https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?auto=format&fit=crop&w=800&q=80" alt="Zebra">
-      </div>
-    </section>
-
-    <section id="payment" class="payment">
-      <h2>Payment Options</h2>
-      <p>We make your booking secure and convenient. Choose from a variety of trusted payment methods below:</p>
-      <div style="text-align:center;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mastercard-logo.png" alt="MasterCard">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/M-PESA_LOGO-01.svg" alt="Mpesa">
-      </div>
-      <p>We accept online transfers, debit/credit cards, PayPal, and Mpesa payments. Once payment is confirmed, your travel package will be reserved and your itinerary sent to your email instantly.</p>
-    </section>
-
-    <section id="login">
-      <h2>Member Login</h2>
-      <div class="login">
-        <form>
-          <input type="email" placeholder="Enter your email" required><br>
-          <input type="password" placeholder="Enter your password" required><br>
-          <button type="submit">Login</button>
-          <p>Don’t have an account? <a href="#">Sign Up</a></p>
-        </form>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>📍 Nairobi, Kenya | 📞 +254 745456411 | ✉️ info@newtontravel.com</p>
-      <p>Follow us on: 
-        <a href="#">Facebook</a> | 
-        <a href="#">Instagram</a> | 
-        <a href="#">YouTube</a>
-      </p>
-    </section>
-<section id="social" style="background:#e0f2f1;padding:50px 20px;text-align:center;">
-  <h2 style="color:#00796b;">Follow Newton Travel Agency</h2>
-  <p>Join our adventure community — see breathtaking destinations, travel stories, and exclusive offers on our social platforms:</p>
-
-  <div style="display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:25px;">
-
-    <!-- Instagram -->
-    <a href="https://instagram.com/newtontravelagency" target="_blank" title="Follow us on Instagram">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="55" alt="Instagram">
-    </a>
-
-    <!-- YouTube -->
-    <a href="https://youtube.com/@newtontravelagency" target="_blank" title="Subscribe on YouTube">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="55" alt="YouTube">
-    </a>
-
-    <!-- Facebook -->
-    <a href="https://facebook.com/newtontravelagency" target="_blank" title="Follow us on Facebook">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="55" alt="Facebook">
-    </a>
-
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com/@newtontravelagency" target="_blank" title="Follow us on TikTok">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="55" alt="TikTok">
-    </a>
-  </div>
-
-  <p style="margin-top:25px;color:#555;">
-    Stay inspired — new videos and travel photos posted every week!  
-    <br>
-    🌍 <b>@newtontravelagency2025</b> on all platforms
-  </p>
-</section>
+</header>
 
 
-  </div>
+  <!-- 🏝️ DESTINATIONS -->
+  <section class="destinations">
+    <h2>Popular Destinations</h2>
+    <p>Explore top-rated locations our travelers love most.</p>
 
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Maldives">
+      <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Paris">
+      <img src="image/wwww.jpg" alt="Swiss Alps">
+      <img src="image/tttr.jpg" alt="Safari Tanzania">
+    </div>
+  </section>
+
+  <!-- 🧭 FOOTER -->
   <footer>
-  
-    <p>© 1999–<script>document.write(new Date().getFullYear());</script> Newton Travel Agency. All rights reserved.</p>
+    <p>&copy; 2025 Newton Travel Agency | All Rights Reserved</p>
+    <p>
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a>
+    </p>
   </footer>
 
+  <script>
+    // 📱 Toggle Navbar
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('nav-links');
+    menuIcon.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+ 
 </body>
 </html>

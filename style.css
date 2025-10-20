@@ -261,5 +261,45 @@ form input, form textarea {
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    
+    /* Search bar styles */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+#search-input {
+  padding: 12px 15px;
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+}
+
+#search-input:focus {
+  border-color: #0a74da;
+}
+
+#search-btn {
+  padding: 12px 20px;
+  border: none;
+  background-color: #0a74da;
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#search-btn:hover {
+  background-color: #065bb5;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: calc(1rem + 1vw);
+}
     

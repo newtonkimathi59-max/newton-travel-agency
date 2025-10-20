@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newton Travel Agency</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+      margin-top: 10px;
+    }
+    nav {
+      background-color: #00796b;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Newton Travel Agency</h1>
+        <p>Your Adventure Begins Here</p>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about us.html">About us</a>
+    <a href="destination.html">Destinations</a>
+    <a href="packages.html">Packages</a>
+    <a href="payment.html">Payment</a>
+    <a href="login.html">Login</a>
+    <a href="contact.html">Contact</a>
+    <a href="book now.html">Book Now</a>
+  </nav>
+
+  <script>
+    // Array of hero images
+    const images = [
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80',
+      'https://images.unsplash.com/photo-1493558103817-58b2924bce98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80',
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80'
+    ];
+
+    let current = 0;
+    const header = document.querySelector('header');
+
+    // Set initial image
+    header.style.backgroundImage = `url('${images[0]}')`;
+
+    // Change image every 5 seconds
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      header.style.backgroundImage = `url('${images[current]}')`;
+    }, 5000);
+  </script>
+
+</body>
+</html>

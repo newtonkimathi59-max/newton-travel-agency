@@ -13,6 +13,64 @@
       line-height: 1.6;
     }
 
+    /* ===== NAVIGATION BAR ===== */
+    nav {
+      background-color: #00796b;
+      padding: 15px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: white;
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      margin-left: 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c8f7f0;
+    }
+
+    /* Hamburger menu icon */
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== HEADER ===== */
     header {
       background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
       color: white;
@@ -32,19 +90,21 @@
       z-index: 1;
     }
 
-    header h1 {
+    header h1, header p {
       position: relative;
       z-index: 2;
+    }
+
+    header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
     }
 
     header p {
-      position: relative;
-      z-index: 2;
       font-size: 1.2rem;
     }
 
+    /* ===== CONTENT ===== */
     .container {
       max-width: 1100px;
       margin: 50px auto;
@@ -102,6 +162,29 @@
       margin-bottom: 20px;
     }
 
+    /* ===== VIDEO SECTION ===== */
+    #promo-video {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f4f4f4;
+    }
+
+    #promo-video h2 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       background-color: #006d5b;
@@ -120,48 +203,94 @@
       text-decoration: underline;
     }
 
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: #00796b;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 10px 0;
+        font-size: 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .container {
+        margin: 30px 15px;
+      }
+
+      iframe {
+        height: 250px;
+      }
     }
-    
   </style>
 </head>
 <body>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about us.html">About us</a>
-    <a href="destination.html">Destinations</a>
-    <a href="packages.html">Packages</a>
-    <a href="payment.html">Payment</a>
-    <a href="login.html">Login</a>
-    <a href="contact.html">Contact</a>
 
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <div class="logo">Newton Travel</div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about us.html">About Us</a>
+      <a href="destination.html">Destinations</a>
+      <a href="packages.html">Packages</a>
+      <a href="payment.html">Payment</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+      <a href="book now.html">Book Now</a>
+      <a href="services.html">Services</a>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
   <header>
     <h1>About Newton Travel Agency</h1>
     <p>Connecting You to the Heart of East Africa Since 1999</p>
   </header>
-  <section id="promo-video" style="text-align:center; padding:60px 20px; background:#f4f4f4;">
-  <h2 style="color:#00796b;">Explore the World with Newton Travel Agency</h2>
-  <p>Watch our travel highlights and start planning your next adventure!</p>
-  <div style="display:flex; justify-content:center; margin-top:30px;">
-  </div>
-    <iframe width="800" height="450"
-            src="https://www.youtube.com/embed/Dt-x5OUS-sY"
-            title="Travel Agency Promo Video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-    </iframe>
+
+  <!-- ===== VIDEO SECTION ===== -->
+  <section id="promo-video">
+    <h2>Explore the World with Newton Travel Agency</h2>
+    <p>Watch our travel highlights and start planning your next adventure!</p>
+    <iframe src="https://www.youtube.com/embed/Dt-x5OUS-sY" title="Travel Agency Promo Video" allowfullscreen></iframe>
+  </section>
+
+  <!-- ===== MAIN CONTENT ===== -->
   <div class="container">
     <section class="about-text">
       <h2>Our Story</h2>
       <p>
-        Founded in 1999, <strong>Newton Travel Agency</strong> was born from a dream to open the world to the hidden wonders of East Africa. 
+        Founded in 1999, <strong>Newton Travel Agency</strong> was born from a dream to open the world to the hidden wonders of East Africa.
         What began as a small family-owned tour company in Nairobi has grown into a full-service travel agency that connects travelers to Kenya, Tanzania, Burundi, Uganda, and beyond.
-        For over two decades, we’ve guided adventurers through breathtaking savannahs, serene coastlines, and vibrant cities — curating experiences that reveal the soul of Africa.
       </p>
       <p>
-        Our philosophy is simple: travel should not just be about seeing places, but about feeling them. 
-        We believe in creating sustainable tourism that benefits both the traveler and the local communities. 
-        Our partnerships with local guides, conservation projects, and cultural organizations ensure that every trip leaves a positive footprint.
+        Our philosophy is simple: travel should not just be about seeing places, but about feeling them.
+        We believe in creating sustainable tourism that benefits both the traveler and the local communities.
       </p>
     </section>
 
@@ -170,40 +299,22 @@
       <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80" alt="Office building">
       <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=800&q=80" alt="African landscape">
       <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Luxury hotel">
-      <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Travel group">
-      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="City view">
     </div>
 
     <section class="section">
       <h3>Our Mission</h3>
-      <p>
-        To make travel an inspiring, life-changing experience for every explorer. 
-        We specialize in custom safaris, city tours, beach holidays, and cultural immersions designed to reflect your personality and passion for discovery.
-      </p>
+      <p>To make travel an inspiring, life-changing experience for every explorer.</p>
 
       <h3>Our Vision</h3>
-      <p>
-        To be East Africa’s most trusted and innovative travel company, blending adventure with sustainability.
-        We aim to preserve natural heritage, celebrate local culture, and create connections that last long after the journey ends.
-      </p>
+      <p>To be East Africa’s most trusted and innovative travel company, blending adventure with sustainability.</p>
 
       <h3>Why Choose Us</h3>
-      <p>
-        Newton Travel Agency combines over 25 years of expertise with heartfelt service. 
-        Our experienced team of travel designers, guides, and coordinators ensures every detail — from airport pickup to your last sunset — is perfectly handled.
-        We provide tailored itineraries, multilingual guides, 24/7 customer support, and insider access to the region’s most exclusive spots.
-      </p>
+      <p>Newton Travel Agency combines over 25 years of expertise with heartfelt service.</p>
     </section>
 
     <section class="section">
       <h3>Meet Our Team</h3>
-      <p>
-        Our dedicated team includes local experts, adventure lovers, and passionate storytellers who live and breathe travel. 
-        Together, we ensure every journey is not just memorable but transformative. 
-        Whether you’re seeking a safari through the Maasai Mara, a cultural visit in Stone Town, or a peaceful retreat on Lake Tanganyika, 
-        we’re here to make it happen with warmth, professionalism, and authenticity.
-      </p>
-
+      <p>Our dedicated team includes local experts, adventure lovers, and passionate storytellers.</p>
       <div class="gallery">
         <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="Team member 1">
         <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Team member 2">
@@ -212,6 +323,7 @@
     </section>
   </div>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <p>© 1999–<script>document.write(new Date().getFullYear());</script> Newton Travel Agency. All rights reserved.</p>
     <p>
@@ -222,5 +334,11 @@
     </p>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>

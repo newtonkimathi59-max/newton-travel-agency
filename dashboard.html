@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Newton Travel Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+  }
+
+  /* Header */
+  header {
+    background-color: #0a74da;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  nav {
+    background-color: #065bb5;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  nav a:hover {
+    background-color: #0a74da;
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  .hero-overlay {
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-content h2 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .hero-content button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #0a74da;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .hero-content button:hover {
+    background-color: #065bb5;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .section {
+    margin-bottom: 40px;
+  }
+  .section h3 {
+    font-size: 1.8rem;
+    color: #065bb5;
+    margin-bottom: 15px;
+  }
+
+  /* Featured destinations */
+  .destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .destination-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .destination-card:hover {
+    transform: scale(1.05);
+  }
+  .destination-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  .destination-card h4 {
+    margin: 10px;
+    font-size: 1.2rem;
+  }
+  .destination-card p {
+    margin: 0 10px 10px 10px;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Bookings table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  table th {
+    background-color: #0a74da;
+    color: white;
+  }
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  /* Travel tips */
+  .tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .tip-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .tip-card h4 {
+    margin-top: 0;
+    color: #065bb5;
+  }
+  .tip-card p {
+    margin: 10px 0 0 0;
+    color: #333;
+  }
+
+  /* Footer & logout */
+  footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #0a74da;
+    color: white;
+  }
+  .logout-btn {
+    background-color: #065bb5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  .logout-btn:hover {
+    background-color: #0a74da;
+  }
+
+  @media(max-width:768px){
+    nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hero-content h2 {
+      font-size: 1.8rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Newton Travel Agency Dashboard</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="#destinations">Destinations</a>
+  <a href="#bookings">My Trips</a>
+  <a href="#tips">Travel Tips</a>
+  <a href="#contact">Contact Support</a>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero" id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2 id="hero-welcome">Welcome!</h2>
+    <p>Explore destinations and plan your dream adventures</p>
+    <button onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">Explore Destinations</button>
+  </div>
+</div>
+
+<main>
+  <!-- Featured Destinations -->
+  <div class="section" id="destinations">
+    <h3>Featured Destinations</h3>
+    <div class="destinations">
+      <div class="destination-card">
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Kenya">
+        <h4>Kenya Safari</h4>
+        <p>Experience the wildlife and savannahs in Kenya.</p>
+      </div>
+      <div class="destination-card">
+        <img src="https://images.unsplash.com/photo-1543349689-70a9562b5d6c?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="Tanzania">
+        <h4>Tanzania Adventure</h4>
+        <p>Climb Mount Kilimanjaro or relax on Zanzibar beaches.</p>
+      </div>
+      <div class="destination-card">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?crop=entropy&cs=tinysrgb&fit=max&w=400&q=80" alt="France">
+        <h4>France Tour</h4>
+        <p>Enjoy culture, history, and romantic experiences in France.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bookings -->
+  <div class="section" id="bookings">
+    <h3>My Upcoming Trips</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="booking-table">
+        <tr>
+          <td>Kenya Safari</td>
+          <td>2025-12-10</td>
+          <td>Confirmed</td>
+        </tr>
+        <tr>
+          <td>Tanzania Adventure</td>
+          <td>2026-01-15</td>
+          <td>Pending</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Travel Tips -->
+  <div class="section" id="tips">
+    <h3>Travel Tips</h3>
+    <div class="tips">
+      <div class="tip-card">
+        <h4>Pack Light</h4>
+        <p>Always carry only essentials to make travel easier and faster.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Check Visas</h4>
+        <p>Ensure your travel documents are up-to-date before traveling abroad.</p>
+      </div>
+      <div class="tip-card">
+        <h4>Health & Safety</h4>
+        <p>Get required vaccinations and travel insurance for a safe trip.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact / Support -->
+  <div class="section" id="contact">
+    <h3>Contact Support</h3>
+    <p>Phone: +254 794 206 271</p>
+    <p>Email: <a href="mailto:info@newtontravel.com">info@newtontravel.com</a></p>
+    <p>Or use the chat box at the bottom-right corner to ask questions.</p>
+  </div>
+
+  <button class="logout-btn" id="logout-btn">Logout</button>
+</main>
+
+<footer>
+  &copy; 2025 Newton Travel Agency. All rights reserved.
+</footer>
+
+<script>
+  // Load user info
+  const user = JSON.parse(localStorage.getItem('user'));
+  const heroWelcome = document.getElementById('hero-welcome');
+  const logoutBtn = document.getElementById('logout-btn');
+
+  if(user){
+    heroWelcome.textContent = `Welcome, ${user.fullname}!`;
+  } else {
+    window.location.href = "signup.html";
+  }
+
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('user');
+    window.location.href = "signup.html";
+  });
+
+  // Hero image slider
+  const hero = document.getElementById('hero');
+  const heroImages = [
+    "https://images.unsplash.com/photo-1508780709619-79562169bc64?crop=entropy&cs=tinysrgb&fit=max&w=1200&q=80",
+    "https://images.unsplash.com/photo-1543349689-70a9562b5d6c?crop=entropy&cs=tinysrgb&fit=max&w=1200&q=80",
+    "https://images.unsplash.com/photo-1502602898657-
+3e91760cbb34?crop=entropy&cs=tinysrgb&fit=max&w=1200&q=80"
+  ];
+    let currentHeroIndex = 0;
+    setInterval(() => {
+      currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+      hero.style.backgroundImage = `url('${heroImages[currentHeroIndex]}')`;
+    }, 5000);
+</script>
+</body>
+</html>

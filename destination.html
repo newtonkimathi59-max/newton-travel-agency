@@ -1,297 +1,280 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Destinations | Newton Travel Agency</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: #f9fafb;
-      color: #333;
-      line-height: 1.6;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destinations | Newton Travel Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+  }
+
+  header {
+    background-color: #0a74da;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  /* Navigation */
+  nav {
+    background-color: #0a74da;
+    padding: 15px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ffe600;
+  }
+
+  /* Menu icon (hamburger) */
+  .menu-icon {
+    display: none;
+    font-size: 28px;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-icon:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
     }
-    header {
-      background: url("https://images.unsplash.com/photo-1593979915180-4dcef7066ed5?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-      position: relative;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.45);
-      z-index: 1;
-    }
-    header h1, header p {
-      position: relative;
-      z-index: 2;
-    }
-    header h1 { font-size: 3.2rem; margin-bottom: 10px; }
-    header p { font-size: 1.3rem; }
-    .container {
-      max-width: 1400px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-    .intro {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .intro h2 {
-      font-size: 2.2rem;
-      color: #006d5b;
-    }
-    .intro p {
-      margin-top: 12px;
-      color: #444;
-      font-size: 1.1rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .destinations {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    }
-    .card img {
+
+    nav a {
+      display: none;
       width: 100%;
-      height: 230px;
-      object-fit: cover;
+      text-align: left;
+      padding: 10px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .card-content {
-      padding: 22px;
+
+    nav.active a {
+      display: block;
+      animation: slideDown 0.3s ease forwards;
     }
-    .card-content h3 {
-      color: #006d5b;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
+
+    .menu-icon {
+      display: block;
     }
-    .card-content p {
-      color: #555;
-      font-size: 0.97rem;
-      margin-bottom: 0;
-    }
-    footer {
-      background-color: #006d5b;
-      color: white;
-      text-align: center;
-      padding: 30px 10px;
-      margin-top: 80px;
-    }
-    footer a {
-      color: #c8f7f0;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero {
+    position: relative;
+    height: 60vh;
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .destinations {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .destination-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .destination-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .destination-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .destination-info {
+    padding: 15px;
+  }
+
+  .destination-info h3 {
+    color: #0a74da;
+    margin: 10px 0;
+    font-size: 1.3rem;
+  }
+
+  .destination-info p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  footer {
+    background-color: #0a74da;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.95rem;
+  }
+</style>
 </head>
 <body>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about us.html">About us</a>
-    <a href="destination.html">Destinations</a>
-    <a href="packages.html">Packages</a>
-    <a href="payment.html">Payment</a>
-    <a href="login.html">Login</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <div class="container">
-    <section class="intro">
-      <h2>Our Global Destinations</h2>
-      <p>From the wild plains of Africa and tranquil islands of the Indian Ocean, to vibrant cities in Europe and Asia’s cultural hubs — at Newton Travel Agency, we’ve carefully selected 20 of the world’s most inspiring destinations. Let your next great adventure begin here.</p>
-    </section>
+<nav id="menu">
+  <span class="menu-icon" onclick="toggleMenu()">☰</span>
+  <a href="index.html">Home</a>
+  <a href="about us.html">About us</a>
+  <a href="destination.html">Destinations</a>
+  <a href="packages.html">Packages</a>
+  <a href="payment.html">Payment</a>
+  <a href="login.html">Login</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-    <section class="destinations">
-      <!-- Example card -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1543248939-9ec6bcfca43c?auto=format&fit=crop&w=800&q=80" alt="Maasai Mara, Kenya">
-        <div class="card-content">
-          <h3>Maasai Mara, Kenya</h3>
-          <p>Roam the golden savannahs of the Maasai Mara, witness the Great Migration in action and meet Maasai warriors who guide you through authentic wildlife encounters.</p>
-        </div>
-      </div>
+<header>
+  <h1>Newton Travel Agency</h1>
+</header>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1526779259212-939e64792b16?auto=format&fit=crop&w=800&q=80" alt="Cape Town, South Africa">
-        <div class="card-content">
-          <h3>Cape Town, South Africa</h3>
-          <p>Where ocean meets mountain — from Table Mountain hikes and colourful Bo-Kaap streets, to wine estates and penguins at Boulders Beach.</p>
-        </div>
-      </div>
+<!-- Hero Section -->
+<div class="hero">
+  <div class="hero-content">
+    <h2>Discover the World</h2>
+    <p>Explore our top destinations and experience unforgettable adventures.</p>
+  </div>
+</div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" alt="Paris, France">
-        <div class="card-content">
-          <h3>Paris, France</h3>
-          <p>The City of Light — stroll along the Seine, marvel at the Eiffel Tower and dive into world-class cafés, museums and boutiques.</p>
-        </div>
-      </div>
+<!-- Destinations Section -->
+<section class="destinations">
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1533681703669-94a78db1b50d?auto=format&fit=crop&w=800&q=80" alt="Marrakech, Morocco">
-        <div class="card-content">
-          <h3>Marrakech, Morocco</h3>
-          <p>A sensory journey of spice and colour — wander through the Medina’s souks, relax in a riad and discover the Sahara on a desert excursion.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80" alt="London, UK">
-        <div class="card-content">
-          <h3>London, UK</h3>
-          <p>From royal palaces to vibrant street art — London melds historic grandeur with modern flair and world-class cuisine.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80" alt="Tokyo, Japan">
-        <div class="card-content">
-          <h3>Tokyo, Japan</h3>
-          <p>A neon wonderland of tradition and innovation — explore ancient temples by day and modern skyscrapers by night.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Dubai, UAE">
-        <div class="card-content">
-          <h3>Dubai, UAE</h3>
-          <p>Luxury and desert adventure wrapped into one — world-class architecture, shopping, dune safaris and star-studded sights.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="New York City, USA">
-        <div class="card-content">
-          <h3>New York City, USA</h3>
-          <p>The city that never sleeps — Broadway shows, skyline views, iconic landmarks and multicultural neighbourhoods await.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1526481280691-906b2a8e70a1?auto=format&fit=crop&w=800&q=80" alt="Rio de Janeiro, Brazil">
-        <div class="card-content">
-          <h3>Rio de Janeiro, Brazil</h3>
-          <p>Fun, sun and carnival spirit — soak in panoramic views from Christ the Redeemer and dance along the famous beaches of Copacabana and Ipanema.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Sydney, Australia">
-        <div class="card-content">
-          <h3>Sydney, Australia</h3>
-          <p>Opera House, harbour cruises, Bondi Beach and coastal walks — this sun-lit city combines relaxed Aussie style with global energy.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1593979915180-4dcef7066ed5?auto=format&fit=crop&w=800&q=80" alt="Bali, Indonesia">
-        <div class="card-content">
-          <h3>Bali, Indonesia</h3>
-          <p>Lush rice terraces, sacred temples and beachy rituals — Bali is island life at its most vibrant and soulful.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1593979915180-4dcef7066ed5?auto=format&fit=crop&w=800&q=80" alt="Maldives">
-        <div class="card-content">
-          <h3>Maldives</h3>
-          <p>Crystal-clear lagoons, over-water villas and palm-lined atolls — your haven of peace and luxury in the Indian Ocean.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1526779259212-939e64792b16?auto=format&fit=crop&w=800&q=80" alt="Santorini, Greece">
-        <div class="card-content">
-          <h3>Santorini, Greece</h3>
-          <p>White-washed houses, cobalt domes and caldera views — a romantic cliff-side escape like no other.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" alt="Istanbul, Turkey">
-        <div class="card-content">
-          <h3>Istanbul, Turkey</h3>
-          <p>A city straddling continents — historic mosques, vibrant bazaars, Bosphorus ferries and deep-rooted culture in one place.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1533681703669-94a78db1b50d?auto=format&fit=crop&w=800&q=80" alt="Cairo, Egypt">
-        <div class="card-content">
-          <h3>Cairo, Egypt</h3>
-          <p>Walk among ancient wonders — the Pyramids, the Sphinx and the Nile’s timeless embrace await your discovery.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80" alt="Tokyo, Japan (another view)">
-        <div class="card-content">
-          <h3>Kyoto, Japan</h3>
-          <p>Zen gardens, historic temples and traditional tea houses — Kyoto offers a tranquil counterpoint to modern Tokyo.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Victoria Falls, Zambia/Zimbabwe">
-        <div class="card-content">
-          <h3>Victoria Falls, Zambia/Zimbabwe</h3>
-          <p>“The Smoke That Thunders” — one of the world’s largest waterfalls, surrounded by lush rainforest and thrilling adventure.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1526481280691-906b2a8e70a1?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu, Peru">
-        <div class="card-content">
-          <h3>Machu Picchu, Peru</h3>
-          <p>High in the Andes, this ancient Incan city shrouded in mist invites discovery, history and breathtaking views.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Grand Canyon, USA">
-        <div class="card-content">
-          <h3>Grand Canyon, USA</h3>
-          <p>A natural masterpiece carved by time — hues of rock and expansive vistas create an unforgettable journey into the earth’s story.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1593979915180-4dcef7066ed5?auto=format&fit=crop&w=800&q=80" alt="Great Barrier Reef, Australia">
-        <div class="card-content">
-          <h3>Great Barrier Reef, Australia</h3>
-          <p>Dive into the world’s largest coral reef system — vibrant marine life, coral gardens and underwater adventure await.</p>
-        </div>
-      </div>
-
-    </section>
+  <!-- Kenya -->
+  <div class="destination-card">
+    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" alt="Kenya">
+    <div class="destination-info">
+      <h3>Kenya</h3>
+      <p>Experience the heart of Africa — from breathtaking safaris in Maasai Mara to the beaches of Mombasa. Perfect for nature and adventure lovers.</p>
+    </div>
   </div>
 
-  <footer>
-    <p>© 1999–<script>document.write(new Date().getFullYear());</script> Newton Travel Agency. All rights reserved.</p>
-    <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
-  </footer>
+  <!-- Tanzania -->
+  <div class="destination-card">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Tanzania">
+    <div class="destination-info">
+      <h3>Tanzania</h3>
+      <p>Climb Mount Kilimanjaro, visit Serengeti National Park, and relax in Zanzibar. Tanzania offers the perfect mix of thrill and tranquility.</p>
+    </div>
+  </div>
+
+  <!-- Paris -->
+  <div class="destination-card">
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Paris">
+    <div class="destination-info">
+      <h3>Paris, France</h3>
+      <p>Fall in love with the city of lights. Explore the Eiffel Tower, the Louvre, and the romantic streets that define timeless elegance.</p>
+    </div>
+  </div>
+
+  <!-- Maldives -->
+  <div class="destination-card">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Maldives">
+    <div class="destination-info">
+      <h3>Maldives</h3>
+      <p>White sands, turquoise waters, and world-class resorts. Perfect for honeymoons, relaxation, and underwater adventures.</p>
+    </div>
+  </div>
+
+ <!-- Egypt -->
+<div class="destination-card">
+  <img src="https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=800&q=80" alt="Egypt Pyramids">
+  <div class="destination-info">
+    <h3>Egypt</h3>
+    <p>Walk through the sands of time — explore the Great Pyramids of Giza, sail the Nile, and discover the timeless wonders of ancient Egypt.</p>
+  </div>
+</div>
+
+<!-- Bali -->
+<div class="destination-card">
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Bali, Indonesia">
+  <div class="destination-info">
+    <h3>Bali, Indonesia</h3>
+    <p>Immerse yourself in Bali’s tropical paradise — from breathtaking temples to hidden waterfalls and serene beaches that define pure tranquility.</p>
+  </div>
+</div>
+
+</section>
+
+<footer>
+  <p>© 2025 Newton Travel Agency | Explore the World with Us</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>

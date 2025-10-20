@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newton Travel Agency | Explore the World</title>
+  <meta property="og:title" content="Newton Travel Agency | Explore the World">
+<meta property="og:description" content="Discover, explore, and book your dream destinations with Newton Travel Agency — your travel companion since 1999.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
+<meta property="og:url" content="https://newtontravelagency.netlify.app">
+<meta name="twitter:card" content="summary_large_image">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    header h1, header p, header a {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    header a {
+      background-color: #00b894;
+      padding: 12px 25px;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+
+    header a:hover {
+      background-color: #019874;
+    }
+
+    nav {
+      background-color: #00796b;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 70px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00796b;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #2e2b2b;
+      max-width: 900px;
+      margin: 0 auto 30px;
+    }
+    p header {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #e0cccc;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .packages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .package {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 350px;
+      transition: transform 0.3s ease;
+    }
+
+    .package:hover {
+      transform: scale(1.05);
+    }
+
+    .package img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .package-content {
+      padding: 20px;
+    }
+
+    .package-content h3 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    .package-content p {
+      color: #555;
+      text-align: left;
+    }
+
+    .payment {
+      background: #e0f2f1;
+      padding: 50px 20px;
+      border-radius: 15px;
+    }
+
+    .payment img {
+      width: 80px;
+      height: auto;
+      margin: 10px;
+    }
+
+    .login {
+      background: #fff;
+      padding: 50px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .login input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .login button {
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login button:hover {
+      background: #005f54;
+    }
+
+    footer {
+      background: #00796b;
+      color: white;
+      text-align: center;
+      padding: 40px 10px;
+      margin-top: 80px;
+    }
+
+    footer a {
+      color: #c8f7f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .search-bar {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .search-bar button {
+      padding: 10px 20px;
+      background-color: #0a74da;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .search-bar button:hover {
+      background-color: #065bb5;
+    }
+    div class=".search-bar input:focus {
+      border-color: #0a74da;
+      outline: none;
+    }
+    
